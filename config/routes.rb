@@ -1,4 +1,6 @@
 AmIThereYet::Application.routes.draw do
+  resources :posts
+
   resources :goals
   resources :users
 
