@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 ruby '2.0.0'
+gem 'bootstrap-sass', '2.3.2.0'
 
 gem 'rb-readline', '~> 0.4.2'
 
