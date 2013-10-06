@@ -1,10 +1,11 @@
 AmIThereYet::Application.routes.draw do
-  resources :comments
-
-  resources :posts
 
   resources :goals
   resources :users
+
+  resources :posts do
+    resources :comments, only: [:create]
+  end
 
   root  'pages#home'
   match '/help',    to: 'pages#help',    via: 'get'
