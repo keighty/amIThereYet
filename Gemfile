@@ -7,6 +7,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 
 gem 'rb-readline', '~> 0.4.2'
 gem "font-awesome-rails"
+gem 'maruku'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
