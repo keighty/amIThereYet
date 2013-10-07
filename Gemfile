@@ -13,6 +13,8 @@ gem 'maruku'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'factory_girl_rails', '4.1.0'
+  gem 'capybara'
 end
 
 group :production do
