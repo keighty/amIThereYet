@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   # GET /posts.atom
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse
 
     respond_to do |format|
       format.html # index.html.erb
