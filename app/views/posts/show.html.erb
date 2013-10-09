@@ -1,19 +1,21 @@
 <% provide(:title, @post.title) %>
 
+<%= link_to 'Edit', edit_post_path(@post), class: "btn" %>  <%= link_to 'Back', posts_path, class: "btn" %>
+
 <%= render :partial => @post %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-
-<h2>Comments</h2>
-<div id="comments">
-  <%= render :partial => @post.comments %>
+<div class="row-fluid">
+  <div class="span10 well offset1">
+    <h2>Comments</h2>
+    <div id="comments">
+      <%= render :partial => @post.comments %>
+    </div>
+    <%= form_for [@post, Comment.new], :remote => true do |f| %>
+    <p>
+      <%= f.label :body, "New comment" %><br/>
+      <%= f.text_area :body %>
+    </p>
+    <p><%= f.submit "Add comment" %></p>
+    <% end %>
+  </div>
 </div>
-
-<%= form_for [@post, Comment.new], :remote => true do |f| %>
-<p>
-  <%= f.label :body, "New comment" %><br/>
-  <%= f.text_area :body %>
-</p>
-<p><%= f.submit "Add comment" %></p>
-<% end %>

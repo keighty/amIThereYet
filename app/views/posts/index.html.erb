@@ -11,10 +11,10 @@
         <%= link_to post.title, post %>
       </h3>
         Posted: <%= post.created_at.strftime("%d-%b-%y") %>
-      <div class="well">
-          <%= truncate post.content.html_safe, length: 160 %>
-          <%= link_to 'read more', post %>
+      <div class="well no-overflow lines-1">
+        <%= post.content.html_safe %>
       </div>
+        <%= link_to 'read more', post, class: "pull-right" %>
     <% end %>
     <%= will_paginate @posts, class: "pages pagination" %>
    </div>

@@ -16,7 +16,10 @@ namespace :db do
 
       title = "Title #{n+1}"
       body = "body #{n+1}, " * 37
-      Post.create!(title: title, body: body)
+      p = Post.create!(title: title, body: body)
+      n.times do |x|
+        p.comments.create(body: "This is a comment")
+      end
     end
 
   end
