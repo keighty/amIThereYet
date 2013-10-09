@@ -1,8 +1,20 @@
 <% provide(:title, "Posts") %>
- <h1>Listing posts
+ <h1>All posts
  <a href="/posts.atom"><i class="icon-rss"></i></a>
  </h1>
-
- <%= render :partial => @posts %>
+<div class="row-fluid">
+  <div class="span10 offset1">
+    <% @posts.each do |post| %>
+      <h3>
+        <%= link_to post.title, post %>
+      </h3>
+        Posted: <%= post.created_at.strftime("%d-%b-%y") %>
+      <div class="well">
+          <%= truncate post.content.html_safe, length: 160 %>
+          <%= link_to 'read more', post %>
+      </div>
+    <% end %>
+   </div>
+</div>
 
  <%= link_to 'New Post', new_post_path %>

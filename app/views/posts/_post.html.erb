@@ -1,2 +1,4 @@
- <h2><%= link_to_unless_current post.title, post %></h2>
- <%= post.content.html_safe %>
+<h3><%= post.created_at.strftime("%d-%b-%Y") %> | <%= link_to_unless_current post.title, post %></h3>
+<div class="well post_content">
+  <%= post.content.html_safe %>
+</div>
