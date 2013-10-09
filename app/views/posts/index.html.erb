@@ -1,9 +1,6 @@
-<% provide(:title, "Posts") %>
- <h1>All posts
- <a href="/posts.atom"><i class="icon-rss"></i></a>
- </h1>
+<% provide(:title, "Blog") %>
 <div class="row-fluid">
-  <div class="span10 offset1">
+  <div class="span9 offset1">
     <%= will_paginate @posts, class: "pages pagination" %>
 
     <% @posts.each do |post| %>
@@ -18,6 +15,18 @@
     <% end %>
     <%= will_paginate @posts, class: "pages pagination" %>
    </div>
+
+  <aside class="span2">
+    <section>
+      <ul class="nav">
+        <li>
+          <a href="/posts.atom"><i class="icon-rss icon-4x"></i></a>
+        </li>
+        <li>
+          <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+        </li>
+      </ul>
+    </section>
+  </aside>
 </div>
 
- <%= link_to 'New Post', new_post_path %>
