@@ -1,8 +1,8 @@
 <% provide(:title, "Users") %>
 <h1>Listing users</h1>
-
 <div class="row-fluid">
   <div class="span10 well offset1">
+      <%= will_paginate @users, class: "pages pagination" %>
     <table class="users">
       <thead>
         <tr>
@@ -22,5 +22,6 @@
         <% end %>
       </tbody>
     </table>
+    <%= will_paginate @users, class: "pages pagination" %>
   </div>
 </div>
