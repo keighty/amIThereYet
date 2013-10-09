@@ -5,7 +5,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   # GET /posts.atom
   def index
-    @posts = Post.all.reverse
+    # @posts = Post.all.reverse
+    @posts = Post.paginate(page: params[:page], limit: 5).order('created_at DESC')
+    # @users = @user.followed_users.reverse.paginate(page: params[:page])
+
 
     respond_to do |format|
       format.html # index.html.erb

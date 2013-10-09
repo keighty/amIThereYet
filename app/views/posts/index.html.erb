@@ -4,6 +4,8 @@
  </h1>
 <div class="row-fluid">
   <div class="span10 offset1">
+    <%= will_paginate @posts, class: "pages pagination" %>
+
     <% @posts.each do |post| %>
       <h3>
         <%= link_to post.title, post %>
@@ -14,6 +16,7 @@
           <%= link_to 'read more', post %>
       </div>
     <% end %>
+    <%= will_paginate @posts, class: "pages pagination" %>
    </div>
 </div>
 

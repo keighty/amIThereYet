@@ -15,7 +15,7 @@ namespace :db do
                    password_confirmation: password)
 
       title = "Title #{n+1}"
-      body = "body #{n+1}, "*37
+      body = "body #{n+1}, " * 37
       Post.create!(title: title, body: body)
     end
 
