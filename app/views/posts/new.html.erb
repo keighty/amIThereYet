@@ -1,6 +1,8 @@
 <% provide(:title, "New Post") %>
 <h1>New post</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', posts_path %>
+<div class="row-fluid">
+  <div class="span6 well offset3">
+    <%= render 'form' %>
+  </div>
+</div>
