@@ -1,3 +1,5 @@
+<% provide(:title, @post.title) %>
+
 <%= render :partial => @post %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
