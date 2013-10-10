@@ -1,6 +1,6 @@
 <% provide(:title, @post.title) %>
 
-<%= link_to 'Edit', edit_post_path(@post), class: "btn" %>  <%= link_to 'Back', posts_path, class: "btn" %>
+<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-mini" %>  <%= link_to 'Delete', '#', class: "btn btn-mini btn-danger" %>  <%= link_to 'Back', posts_path, class: "btn btn-mini" %>
 
 <%= render :partial => @post %>
 

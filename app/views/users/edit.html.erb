@@ -3,15 +3,15 @@
 <%= render partial: 'sidebar' %>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
-      <div class="span6 offset1"><%= render partial: 'edit_password' %></div>
+      <div class="span6 "><%= render partial: 'edit_password' %></div>
     </div>
     <div class="tab-pane" id="tab2">
-      <div class="span6 offset1">
+      <div class="span6">
         <%= render partial: @user.goals, locals:{ make_edits: true } %>
       </div>
     </div>
     <div class="tab-pane" id="tab3">
-      <div class="span6 offset1"><%= render partial: 'notifications' %></div>
+      <div class="span6"><%= render partial: 'notifications' %></div>
     </div>
   </div>
 </div> <!-- close div from sidebar partial -->
