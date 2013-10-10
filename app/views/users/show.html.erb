@@ -1,10 +1,17 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span3">
     <section>
       <h1>
         <%= @user.name %>
       </h1>
     </section>
   </aside>
+
+  <div class="span6">
+    <h2 class="text-center">Goals</h2>
+    <%= render :partial => @user.goals %>
+    <hr>
+    <%= render partial: 'goals/form' %>
+  </div>
 </div>
