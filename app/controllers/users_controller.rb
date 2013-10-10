@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user,       only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user, only: [:edit, :index, :update]
   before_action :correct_user,   only: [:edit, :update]
+  before_action :admin_user,     only: [:index]
 
   # GET /users
   def index
@@ -45,7 +46,8 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
+    set_user.destroy
+    flash[:success] = "User destroyed."
     redirect_to users_url
   end
 
@@ -67,5 +69,12 @@ class UsersController < ApplicationController
 
     def correct_user
       redirect_to(root_url) unless current_user?(set_user)
+    end
+
+    def admin_user
+      unless is_admin?
+        store_location
+        redirect_to signin_url, notice: "Please sign in as admin."
+      end
     end
 end

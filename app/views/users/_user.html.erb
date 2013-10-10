@@ -1,5 +1,10 @@
 <tr>
   <td><%= link_to user.name, user %></td>
   <td><%= user.email %></td>
-  <td class="actions"><%= link_to 'Edit', edit_user_path(user), class: "btn" %>  <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn"  %></td>
+  <td class="actions">
+    <%= link_to 'Edit', edit_user_path(user), class: "btn" %>
+    <% if current_user.admin? && !current_user?(user) %>
+      <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn"  %>
+    <% end %>
+  </td>
 </tr>

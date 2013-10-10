@@ -102,4 +102,26 @@ describe "User pages" do
       it { should have_content('error') }
     end
   end
+
+  describe "delete links" do
+
+    it { should_not have_link('delete') }
+
+    describe "as an admin user" do
+      let(:admin) { FactoryGirl.create(:admin) }
+      before do
+        sign_in admin
+        visit users_path
+      end
+
+      it { should have_link('Delete', href: user_path(User.last)) }
+
+      it "should be able to delete another user" do
+        expect do
+          click_link('Delete', match: :one)
+        end.to change(User, :count).by(-1)
+      end
+      it { should_not have_link('Delete', href: user_path(admin)) }
+    end
+  end
 end
