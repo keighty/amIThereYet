@@ -1,32 +1,9 @@
 <% provide(:title, "Blog") %>
+<%= render partial: 'posts_sidebar' %>
 <div class="row-fluid">
   <div class="span9 offset1">
+    <%= render partial: 'post_index' %>
     <%= will_paginate @posts, class: "pages pagination" %>
-
-    <% @posts.each do |post| %>
-      <h3>
-        <%= link_to post.title, post %>
-      </h3>
-        Posted: <%= post.created_at.strftime("%d-%b-%y") %>
-      <div class="well no-overflow lines-1">
-        <%= post.content.html_safe %>
-      </div>
-        <%= link_to 'read more', post, class: "pull-right" %>
-    <% end %>
-    <%= will_paginate @posts, class: "pages pagination" %>
-   </div>
-
-  <aside class="span2">
-    <section>
-      <ul class="nav">
-        <li>
-          <a href="/posts.atom"><i class="icon-rss icon-2x">   RSS</i></a>
-        </li>
-        <li>
-          <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
-        </li>
-      </ul>
-    </section>
-  </aside>
+ </div>
 </div>
 
