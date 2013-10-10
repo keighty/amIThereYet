@@ -1,9 +1,15 @@
 <% provide(:title, "Edit") %>
-<h1>Update your profile</h1>
-
-<div class="row">
-  <%= render partial: 'sidebar' %>
-  <div class="span6 offset3">
-    <%= render partial: 'edit_password' %>
+<h1>Profile</h1>
+<%= render partial: 'sidebar' %>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <div class="span6 offset1"><%= render partial: 'edit_password' %></div>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <div class="span6 offset1"><%= render partial: @user.goals %></div>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <div class="span6 offset1"><%= render partial: 'notifications' %></div>
+    </div>
   </div>
-</div>
+</div> <!-- close div from sidebar partial -->
