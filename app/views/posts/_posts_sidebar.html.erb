@@ -1,12 +1,8 @@
-<aside class="span2">
-  <section>
-    <ul class="nav">
-      <li>
-        <a href="/posts.atom"><i class="icon-rss icon-2x">   RSS</i></a>
-      </li>
-      <li>
-        <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
-      </li>
-    </ul>
-  </section>
-</aside>
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs span2">
+    <li class="nav-header">Blog</li>
+    <li class="active"> <a href="#tab1" data-toggle="tab">Posts</a></li>
+    <li><a href="#tab2" data-toggle="tab"><i class="icon-rss icon">RSS Feed</i></a></li>
+    <li><a href="#tab3" data-toggle="tab">New Post</a></li>
+  </ul>
+<!-- leave div open -->

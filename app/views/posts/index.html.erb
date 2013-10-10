@@ -1,9 +1,17 @@
 <% provide(:title, "Blog") %>
-<%= render partial: 'posts_sidebar' %>
-<div class="row-fluid">
-  <div class="span9 offset1">
-    <%= render partial: 'post_index' %>
-    <%= will_paginate @posts, class: "pages pagination" %>
- </div>
-</div>
 
+<%= render partial: 'posts_sidebar' %>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <div class="span6 offset1"><%= render partial: 'post_index' %>
+    <%= will_paginate @posts, class: "pages pagination" %></div>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <div class="span6 offset1">
+      </div>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <div class="span6 offset1">New post here</div>
+    </div>
+  </div>
+</div> <!-- close div from sidebar partial -->
