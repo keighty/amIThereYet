@@ -1,11 +1,6 @@
 <% provide(:title, "Home") %>
-
-<div class="center hero-unit">
-  <h1>Am I There Yet?</h1>
-
-  <h2>
-    Become an expert - Track your progress.
-  </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+<% if signed_in? %>
+  <%= render 'layouts/dashboard' %>
+<% else %>
+  <%= render 'layouts/banner' %>
+<% end %>
