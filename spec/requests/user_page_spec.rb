@@ -93,7 +93,7 @@ describe "User pages" do
     end
 
     describe "page" do
-      it { should have_content("Update your profile") }
+      it { should have_content("Profile") }
     end
 
     describe "with invalid information" do
