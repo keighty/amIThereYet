@@ -4,7 +4,8 @@ namespace :db do
     User.create!(name: "Irene Ball",
                  email: "irene@example.com",
                  password: "eyeba77",
-                 password_confirmation: "eyeba77")
+                 password_confirmation: "eyeba77",
+                 admin: true)
     10.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@example.com"
