@@ -1,6 +1,4 @@
 AmIThereYet::Application.routes.draw do
-
-  resources :goals
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
