@@ -2,21 +2,14 @@
 <h1>Listing users</h1>
 <div class="row-fluid">
   <div class="span10 well offset1">
-      <%= will_paginate @users, class: "pages pagination" %>
     <table class="users">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
 
-      <tbody>
-        <% @users.each do |user| %>
-          <%= render user %>
-        <% end %>
-      </tbody>
+      <%= render @users %>
     </table>
     <%= will_paginate @users, class: "pages pagination" %>
   </div>
