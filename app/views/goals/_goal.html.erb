@@ -4,5 +4,12 @@
     <p>
       <%= goal.motivation %>
     </p>
+    <% if make_edits  %>
+      <div class="pull-right">
+        <%= link_to "Edit", '#', class: 'btn' %>
+        <%= link_to "Delete", '#', class: 'btn' %>
+      </div>
+    <% end %>
+    <hr>
   <% end %>
 </div>
