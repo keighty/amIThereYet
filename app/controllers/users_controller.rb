@@ -4,13 +4,11 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   # GET /users
-  # GET /users.json
   def index
     @users = User.paginate(page: params[:page], limit: 10)
   end
 
   # GET /users/1
-  # GET /users/1.json
   def show
   end
 
@@ -46,13 +44,9 @@ class UsersController < ApplicationController
   end
 
   # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
+    redirect_to users_url
   end
 
   private
