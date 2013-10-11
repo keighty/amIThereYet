@@ -2,7 +2,7 @@
 Variables
 ***************/
 var goal_id,
-    user_id = 1;
+    user_id;
 
 /**************
 Reload this javascript to avoid turbolinks caching
@@ -22,6 +22,7 @@ function initPage() {
 
   $('.edits').on('click', function() {
     goal_id = parseInt($(this).attr('id'), 10);
+    user_id = parseInt(window.location.pathname.split('/')[2]);
     get_edit_partial(goal_id);
     return false;
   });
