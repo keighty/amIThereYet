@@ -1,5 +1,11 @@
 class GoalsController < ApplicationController
-  before_action :set_user, only: [:create, :update]
+  before_action :set_user, only: [:create, :update, :edit]
+
+  def edit
+
+    @goal = @user.goals.find(params[:id])
+    render partial: 'editgoal'
+  end
 
   def show
   end

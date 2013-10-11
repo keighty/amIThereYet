@@ -6,8 +6,8 @@
     </p>
     <% if make_edits  %>
       <div class="pull-right">
-        <%= link_to "Edit", '#', class: 'btn btn-mini' %>
-        <%= link_to "Delete", '#', class: 'btn btn-mini btn-danger' %>
+        <%= link_to "Edit", '#', {class: 'edits btn btn-mini', id: "#{goal.id}"} %>
+        <%= link_to "Delete", '#', {class: 'deletes btn btn-mini btn-danger', id: "#{goal.id}"} %>
       </div>
     <% end %>
     <hr>
