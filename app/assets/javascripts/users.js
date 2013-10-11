@@ -4,7 +4,18 @@ Variables
 var goal_id,
     user_id = 1;
 
+/**************
+Reload this javascript to avoid turbolinks caching
+***************/
 $(function() {
+  initPage();
+});
+
+$(window).bind('page:change', function() {
+  initPage();
+});
+
+function initPage() {
   /**************
   Load click handlers
   ***************/
@@ -14,7 +25,7 @@ $(function() {
     get_edit_partial(goal_id);
     return false;
   });
-});
+};
 
 /**************
 Get edit partial
@@ -27,8 +38,7 @@ var get_edit_partial = function get_edit_partial() {
     success: function(data){
       $('#tab4 .span6').append(data);
       // load new tab
-      console.log(window.location);
-      $('a[href="#tab4"]').click()
+      $('a[href="#tab4"]').click();
     }
   });
 };
