@@ -1,0 +1,3 @@
+$('#goals').append('<%= escape_javascript(render :partial => @goal, locals: { make_edits: false }) %>');
+$('#goal_description').val('')
+$('#goal_motivation').val('')

@@ -10,7 +10,10 @@
 
   <div class="span6">
     <h2 class="text-center">Goals</h2>
-    <%= render :partial => @user.goals, locals: { make_edits: false } %>
+
+    <div id="goals">
+      <%= render :partial => @user.goals, locals: { make_edits: false } %>
+    </div>
     <hr>
     <%= render partial: 'goals/form' %>
   </div>
