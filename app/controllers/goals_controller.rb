@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
-  before_action :set_user, only: [:create, :update, :edit]
-  before_action :set_goal, only: [:update, :edit]
+  before_action :set_user, only: [:create, :update, :edit, :show]
+  before_action :set_goal, only: [:update, :edit, :show]
 
   def edit
     render partial: 'editgoal'

@@ -1,3 +1,4 @@
+<h3>Current goals</h3>
 <% @user.goals.each do |goal| %>
-  <p><%= link_to goal.description, "#" %></p>
+  <p><%= link_to goal.description, user_goal_path(@user, goal) %></p>
 <% end %>
