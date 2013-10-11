@@ -1,10 +1,10 @@
 class GoalsController < ApplicationController
+  before_action :set_user, only: [:create, :update]
 
   def show
   end
 
   def create
-    @user = User.find(params[:user_id])
     @goal = @user.goals.create!(goal_params)
 
     respond_to do |format|
@@ -13,7 +13,15 @@ class GoalsController < ApplicationController
     end
   end
 
+  def update
+
+  end
+
   private
+    def set_user
+      @user = User.find(params[:user_id])
+    end
+
     def goal_params
       params.require(:goal).permit(:description, :motivation)
     end
