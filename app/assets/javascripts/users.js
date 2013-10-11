@@ -10,17 +10,14 @@ $(function() {
   ***************/
 
   $('.edits').on('click', function() {
-    // get id
     goal_id = parseInt($(this).attr('id'), 10);
-    // get edit partial
     get_edit_partial(goal_id);
-    // append edit partial to tab4
-    console.log(goal_id);
+    return false;
   });
 });
 
 /**************
-Get goal edit partial
+Get edit partial
 ***************/
 var get_edit_partial = function get_edit_partial() {
   $.ajax({
@@ -28,8 +25,11 @@ var get_edit_partial = function get_edit_partial() {
     url: "http://" + window.location.host + "/users/" + user_id + "/goals/" + goal_id + "/edit",
     dataType: "html",
     success: function(data){
-      console.log(data);
-      console.log("hello from ajax");
+      $('#tab4 .span6').append(data);
+      // load new tab
+      console.log(window.location);
+      $('a[href="#tab4"]').click()
     }
   });
 };
+
