@@ -22,7 +22,7 @@ function initPage() {
 
   $('.edits').on('click', function() {
     goal_id = parseInt($(this).attr('id'), 10);
-    user_id = parseInt(window.location.pathname.split('/')[2]);
+    user_id = parseInt(window.location.pathname.split('/')[2], 10);
     get_edit_partial(goal_id);
     return false;
   });
