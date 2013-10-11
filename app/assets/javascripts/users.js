@@ -25,7 +25,7 @@ function initPage() {
     get_edit_partial(goal_id);
     return false;
   });
-};
+}
 
 /**************
 Get edit partial
