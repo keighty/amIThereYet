@@ -19,14 +19,26 @@ function initPage() {
   /**************
   Load click handlers
   ***************/
-
   $('.edits').on('click', function() {
-    goal_id = parseInt($(this).attr('id'), 10);
-    user_id = parseInt(window.location.pathname.split('/')[2], 10);
-    get_edit_partial(goal_id);
+    load_ids($(this));
+    get_edit_partial();
     return false;
   });
 }
+
+/**************
+Load user and goal id from edit/delete buttons
+***************/
+var load_ids = function load_ids(element) {
+  goal_id = parseInt(element.attr('id').split('_')[1], 10);
+  user_id = parseInt(window.location.pathname.split('/')[2], 10);
+
+  /**************
+  Debug goal and user ID
+  ***************/
+  // console.log(goal_id);
+  // console.log(user_id);
+};
 
 /**************
 Get edit partial
@@ -34,7 +46,7 @@ Get edit partial
 var get_edit_partial = function get_edit_partial() {
   $.ajax({
     type: "GET",
-    url: "http://" + window.location.host + "/users/" + user_id + "/goals/" + goal_id + "/edit",
+    url: "/users/" + user_id + "/goals/" + goal_id + "/edit",
     dataType: "html",
     success: function(data){
       $('#tab4 .span6').append(data);
@@ -43,4 +55,3 @@ var get_edit_partial = function get_edit_partial() {
     }
   });
 };
-

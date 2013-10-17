@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
-  before_action :set_user, only: [:create, :update, :edit, :show]
-  before_action :set_goal, only: [:update, :edit, :show]
+  before_action :set_user, only: [:create, :update, :edit, :show, :destroy]
+  before_action :set_goal, only: [:update, :edit, :show, :destroy]
 
   def edit
     render partial: 'editgoal'
@@ -26,6 +26,16 @@ class GoalsController < ApplicationController
     else
       flash[:error] = "Goal Not Updated"
       redirect_back @user
+    end
+  end
+
+  # DELETE /users/1/goals/1
+  def destroy
+    @goal.destroy
+    flash[:success] = "Goal removed."
+    respond_to do |format|
+        format.html {redirect_to @user}
+        format.js
     end
   end
 
