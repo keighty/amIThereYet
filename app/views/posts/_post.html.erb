@@ -1,4 +1,5 @@
-<h3><%= post.created_at.strftime("%d-%b-%Y") %> | <%= link_to_unless_current post.title, post %></h3>
+<h3><%= link_to_unless_current post.title, post %></h3>
+<small>Posted: <%= post.created_at.strftime("%d-%b-%Y") %></small>
 <div class="well post_content">
   <%= post.content.html_safe %>
 </div>
