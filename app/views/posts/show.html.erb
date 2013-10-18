@@ -1,7 +1,7 @@
 <% provide(:title, @post.title) %>
 
 <% if current_user && current_user.admin? %>
-<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-mini" %>  <%= link_to 'Delete', '#', class: "btn btn-mini btn-danger" %>
+  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-mini" %>  <%= link_to 'Delete', '#', class: "btn btn-mini btn-danger" %>
 <% end %>
   <%= link_to 'Back', posts_path, class: "btn btn-mini" %>
 
