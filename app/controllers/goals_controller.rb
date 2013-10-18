@@ -2,8 +2,21 @@ class GoalsController < ApplicationController
   before_action :set_user, only: [:create, :update, :edit, :show, :destroy]
   before_action :set_goal, only: [:update, :edit, :show, :destroy]
 
+  def index
+    @goals = set_user.goals
+  end
+
+  def new
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def edit
-    render partial: 'editgoal'
+    # render partial: 'editgoal'
+    respond_to do |format|
+      format.js
+    end
   end
 
   def show
@@ -20,12 +33,15 @@ class GoalsController < ApplicationController
 
   def update
     store_location
-    if @goal.update(goal_params)
-      flash[:success] = "Goal Updated"
-      redirect_back @user
-    else
-      flash[:error] = "Goal Not Updated"
-      redirect_back @user
+    respond_to do |format|
+      if @goal.update(goal_params)
+        flash[:success] = "Goal Updated"
+        format.html { redirect_to edit_user_path(@user) }
+        format.js
+      else
+        flash[:error] = "Goal Not Updated"
+        redirect to edit_user_path(@user)
+      end
     end
   end
 
@@ -34,8 +50,8 @@ class GoalsController < ApplicationController
     @goal.destroy
     flash[:success] = "Goal removed."
     respond_to do |format|
-        format.html {redirect_to @user}
-        format.js
+      format.html {redirect_to @user}
+      format.js
     end
   end
 

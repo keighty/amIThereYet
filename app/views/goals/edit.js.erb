@@ -1,3 +1,2 @@
-console.log("hello!");
-$('#tab4 .span6').append("<%= escape_javascript(render partial: 'editgoal') %>");
-$('a[href="#tab4"]').click();
+// replace goal div with goal form
+$('<%= "#goal_#{@goal.id}" %>').replaceWith("<%= escape_javascript(render partial: 'editgoal') %>");

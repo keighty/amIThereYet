@@ -1,3 +1,6 @@
-$('#goals').append('<%= escape_javascript(render :partial => @goal, locals: { make_edits: false }) %>');
+$('#goals').append('<%= escape_javascript(render :partial => @goal, locals: { make_edits: true }) %>');
 $('#goal_description').val('');
 $('#goal_motivation').val('');
+
+$("#new_goal_controls").remove();
+$("#add_goal_button").show();

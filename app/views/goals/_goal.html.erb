@@ -1,17 +1,13 @@
-<div id="goals">
-  <%= div_for goal do %>
-  <div id="goal_<%= goal.id %>">
-    <h3><%= goal.description %></h3>
-    <p>
-      <%= goal.motivation %>
-    </p>
-    <% if make_edits  %>
-      <div class="pull-right">
-       <%= link_to "Edit", '#', {class: 'edits btn btn-mini', id: "edits_#{goal.id}"} %>
-      <%= link_to "Delete", [@user, goal], method: :delete, remote: true, class: "btn btn-mini btn-danger" %>
-      </div>
-    <% end %>
-    <hr>
+<%= div_for goal do %>
+  <h3><%= goal.description %></h3>
+  <p>
+    <%= goal.motivation %>
+  </p>
+  <% if make_edits  %>
+    <div class="pull-right">
+     <%= link_to "Edit", edit_user_goal_path(@user, goal), remote: true, class: 'btn btn-mini' %>
+    <%= link_to "Delete", [@user, goal], method: :delete, confirm: "Are you sure you want to remove this goal?", remote: true, class: "btn btn-mini btn-danger" %>
+    </div>
   <% end %>
-  </div>
-</div>
+  <hr>
+<% end %>

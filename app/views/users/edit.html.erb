@@ -6,15 +6,14 @@
       <div class="span6 "><%= render partial: 'edit_password' %></div>
     </div>
     <div class="tab-pane" id="tab2">
-      <div class="span6">
+      <div class="span6" id="goals">
+        <%= link_to "Add Goal", [@user, Goal.new] , :remote => true, class: "btn", id: "add_goal_button" %>
+        <hr>
         <%= render partial: @user.goals, locals:{ make_edits: true } %>
       </div>
     </div>
     <div class="tab-pane" id="tab3">
       <div class="span6"><%= render partial: 'notifications' %></div>
-    </div>
-    <div class="tab-pane" id="tab4">
-      <div class="span6">Edit goal here</div>
     </div>
   </div>
 </div> <!-- close div from sidebar partial -->
