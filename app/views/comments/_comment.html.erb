@@ -2,9 +2,8 @@
 
 <div class="row-fluid">
   <div class="well">
-    <strong>
-      Posted <%= time_ago_in_words(comment.created_at) %> ago
-    </strong>
+    <strong> Posted <%= time_ago_in_words(comment.created_at) %> ago</strong> by <%= User.find(comment.user_id).name  %>
+
     <br>
     <%= comment.body.html_safe %>
   </div>
