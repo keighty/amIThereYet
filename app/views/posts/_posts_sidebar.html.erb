@@ -3,6 +3,10 @@
     <li class="nav-header">Blog</li>
     <li class="active"> <a href="#tab1" data-toggle="tab">Posts</a></li>
     <li><a href="#tab2" data-toggle="tab"><i class="icon-rss icon">RSS Feed</i></a></li>
-    <li><%= link_to "New Post", new_post_path %> </li>
+    <hr>
+      <% if current_user && current_user.admin? %>
+        <li class="nav-header">Admin</li>
+        <li><%= link_to "New Post", new_post_path %> </li>
+      <% end %>
   </ul>
 <!-- leave div open -->
