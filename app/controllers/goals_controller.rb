@@ -47,11 +47,12 @@ class GoalsController < ApplicationController
 
   # DELETE /users/1/goals/1
   def destroy
-    @goal.destroy
-    flash[:success] = "Goal removed."
-    respond_to do |format|
-      format.html {redirect_to @user}
-      format.js
+    if @goal.destroy
+      flash[:error] = "Goal removed."
+      respond_to do |format|
+        format.html {redirect_to @user}
+        format.js
+      end
     end
   end
 
