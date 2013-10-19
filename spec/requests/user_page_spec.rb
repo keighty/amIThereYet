@@ -32,6 +32,7 @@ describe "User pages" do
     describe "with valid information" do
       before(:all) { 30.times { FactoryGirl.create(:post) } }
       before do
+        fill_in "Username",     with: "Examply"
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"

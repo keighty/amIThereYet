@@ -4,6 +4,7 @@ FactoryGirl.define do
     email    "hello.world@example.com"
     password "foobar"
     password_confirmation "foobar"
+    username "hello-y"
 
     factory :admin do
       admin true
