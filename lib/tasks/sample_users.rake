@@ -5,6 +5,7 @@ namespace :db do
                  email: "irene@example.com",
                  password: "eyeba77",
                  password_confirmation: "eyeba77",
+                 username: "myrene",
                  admin: true)
 
     goal = {  description: "Primary goal",
@@ -15,8 +16,10 @@ namespace :db do
       name  = Faker::Name.name
       email = "example-#{n+1}@example.com"
       password  = "password"
+      username = "example-#{n+1}"
       User.create!(name: name,
                    email: email,
+                   username: username,
                    password: password,
                    password_confirmation: password)
 
@@ -24,7 +27,7 @@ namespace :db do
       body = "body #{n+1}, " * 37
       p = Post.create!(title: title, body: body)
       n.times do |x|
-        p.comments.create(body: "This is a comment")
+        p.comments.create(body: "This is a comment", user_id: n+1)
       end
     end
 
