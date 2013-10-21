@@ -1,0 +1,8 @@
+<p class="nav-header">Post</p>
+<li><%= link_to 'Back to list', posts_path %></li>
+<hr>
+<% if current_user && current_user.admin? %>
+  <li><%= link_to 'Edit post', edit_post_path %></li>
+  <li><%= link_to 'Delete post', '#' %></li>
+  <li><%= link_to 'Delete post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn"  %></li>
+<% end %>
