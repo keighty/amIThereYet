@@ -2,10 +2,7 @@
 <html>
 <head>
   <title>AITY | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= auto_discovery_link_tag(:atom, posts_path(:atom)) %>
-  <%= csrf_meta_tags %>
+  <%= render 'layouts/resources' %>
 </head>
 <body>
   <%= render 'layouts/header' %>
