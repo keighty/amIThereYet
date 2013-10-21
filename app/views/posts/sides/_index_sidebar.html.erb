@@ -1,0 +1,9 @@
+<p class="nav-header">Blog</p>
+<li class="active"><%= link_to 'Posts', posts_path %></li>
+<li><i class="icon-rss icon">  <%= link_to 'RSS Feed', posts_path(:atom) %></i></li>
+
+<hr>
+<% if current_user && current_user.admin? %>
+  <li class="nav-header">Admin</li>
+  <li><%= link_to "New Post", new_post_path %> </li>
+<% end %>
