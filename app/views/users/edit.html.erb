@@ -1,19 +1,19 @@
 <% provide(:title, "Edit") %>
 
-<%= render partial: 'sidebar' %>
-  <div class="tab-content">
-    <div class="tab-pane active" id="tab1">
-      <div class="span6 "><%= render partial: 'edit_password' %></div>
-    </div>
-    <div class="tab-pane" id="tab2">
-      <div class="span6" id="goals">
-        <%= link_to "Add Goal", [@user, Goal.new] , :remote => true, class: "btn", id: "add_goal_button" %>
-        <hr>
-        <%= render partial: @user.goals, locals:{ make_edits: true } %>
-      </div>
-    </div>
-    <div class="tab-pane" id="tab3">
-      <div class="span6"><%= render partial: 'notifications' %></div>
-    </div>
+<% content_for :sidebar do %>
+  <%= render 'users/sidebar' %>
+<% end %>
+
+<div class="tab-pane active" id="tab1">
+  <div class="span6 "><%= render partial: 'edit_password' %></div>
+</div>
+<div class="tab-pane" id="tab2">
+  <div class="span6" id="goals">
+    <%= link_to "Add Goal", [@user, Goal.new] , :remote => true, class: "btn", id: "add_goal_button" %>
+    <hr>
+    <%= render partial: @user.goals, locals:{ make_edits: true } %>
   </div>
-</div> <!-- close div from sidebar partial -->
+</div>
+<div class="tab-pane" id="tab3">
+  <div class="span6"><%= render partial: 'notifications' %></div>
+</div>
