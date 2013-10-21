@@ -1,7 +1,10 @@
 AmIThereYet::Application.routes.draw do
 
+
   resources :users do
-    resources :goals
+    resources :goals do
+      resources :hours, only: [:create, :destroy]
+    end
   end
 
   resources :sessions, only: [:new, :create, :destroy]
