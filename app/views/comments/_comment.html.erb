@@ -1,8 +1,9 @@
 <%= div_for comment do %>
+<% user = User.find(comment.user_id) %>
 
 <div class="row-fluid">
   <div class="well">
-    <strong> Posted <%= time_ago_in_words(comment.created_at) %> ago</strong> by  <%= User.find(comment.user_id).username %>
+    <strong> Posted <%= time_ago_in_words(comment.created_at) %> ago</strong> by  <%= link_to user.username, user %>
 
     <br>
     <%= comment.body.html_safe %>
