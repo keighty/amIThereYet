@@ -1,6 +1,6 @@
 <% provide(:title, "Home") %>
 <% if signed_in? %>
-  <%= render 'layouts/dashboard' %>
+  <%= render 'pages/dashboard' %>
 <% else %>
-  <%= render 'layouts/banner' %>
+  <%= render 'pages/banner' %>
 <% end %>
