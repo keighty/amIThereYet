@@ -1,4 +1,9 @@
 <% provide(:title, "Home") %>
+
+<% content_for :sidebar do %>
+  <%= render 'pages/sides/home_sidebar' %>
+<% end %>
+
 <% if signed_in? %>
   <%= render 'pages/dashboard/dashboard' %>
 <% else %>
