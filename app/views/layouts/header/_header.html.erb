@@ -7,11 +7,11 @@
       <li><%= link_to "Help",    help_path   %></li>
 
       <% if current_user && current_user.admin? %>
-        <%= render 'layouts/admin_header' %>
+        <%= render 'layouts/header/admin_header' %>
       <% end %>
 
       <% if signed_in?  %>
-        <%= render 'layouts/signed_in_header' %>
+        <%= render 'layouts/header/signed_in_header' %>
       <% else %>
         <li><%= link_to "Sign in", signin_path %></li>
       <% end %>
