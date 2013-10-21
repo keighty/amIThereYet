@@ -3,7 +3,7 @@ AmIThereYet::Application.routes.draw do
 
   resources :users do
     resources :goals do
-      resources :hours, only: [:create, :destroy]
+      resources :hours, only: [:create, :destroy], shallow: true
     end
   end
 
