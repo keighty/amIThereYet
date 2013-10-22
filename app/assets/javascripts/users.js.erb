@@ -1,33 +1,38 @@
 /**************
-Reload this javascript to avoid turbolinks caching
+Document Ready:
+  initialize page
 ***************/
  $(function() {
   initPage();
 });
 
+/**************
+On change:
+  initialize page.
+***************/
 $(window).bind('page:change', function() {
   initPage();
 });
 
+/**************
+Initialize page:
+  all event handlers.
+***************/
 function initPage() {
-  var pwd = $('#password_content'),
-      goal = $('#goal_content'),
-      notif = $('#notification_content');
-
-  // load password reset into span
-
   /**************
-  Click handlers
+  Load sidebar functions
   ***************/
   $('.edit_links').bind('click', function() {
     var clicked = $(this).attr("id");
+    // hide all elements of edit_content
     $('.edit_content').addClass("hideme");
+    // show the element that has been clicked
     $('#' + clicked + '_content').removeClass("hideme");
-    debug(clicked);
-    // make id visible and others not visible
+    // do not refresh the page
     return false;
   });
 }
+
 /**************
 Debug
 ***************/
