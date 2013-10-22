@@ -2,6 +2,12 @@
 Document Ready:
   initialize page
 ***************/
+var clicked;
+
+/**************
+Document Ready:
+  initialize page
+***************/
  $(function() {
   initPage();
 });
@@ -20,17 +26,28 @@ Initialize page:
 ***************/
 function initPage() {
   /**************
-  Load sidebar functions
+  Sidebar functions
   ***************/
   $('.edit_links').bind('click', function() {
-    var clicked = $(this).attr("id");
-    // hide all elements of edit_content
-    $('.edit_content').addClass("hideme");
-    // show the element that has been clicked
-    $('#' + clicked + '_content').removeClass("hideme");
+    clearFlash();
+    getClickedId($(this));
+    showClicked();
     // do not refresh the page
     return false;
   });
+}
+
+var clearFlash = function clearFlash() {
+  $('.alert').remove();
+}
+
+var getClickedId = function getClickedId(object) {
+   clicked = object.attr("id");
+}
+
+var showClicked = function showClicked() {
+  $('.edit_content').addClass("hideme");
+  $('#' + clicked + '_content').removeClass("hideme");
 }
 
 /**************
