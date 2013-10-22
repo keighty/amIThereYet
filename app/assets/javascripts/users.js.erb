@@ -1,0 +1,36 @@
+/**************
+Reload this javascript to avoid turbolinks caching
+***************/
+ $(function() {
+  initPage();
+});
+
+$(window).bind('page:change', function() {
+  initPage();
+});
+
+function initPage() {
+  var pwd = $('#password_content'),
+      goal = $('#goal_content'),
+      notif = $('#notification_content');
+
+  // load password reset into span
+
+  /**************
+  Click handlers
+  ***************/
+  $('.edit_links').bind('click', function() {
+    var clicked = $(this).attr("id");
+    $('.edit_content').addClass("hideme");
+    $('#' + clicked + '_content').removeClass("hideme");
+    debug(clicked);
+    // make id visible and others not visible
+    return false;
+  });
+}
+/**************
+Debug
+***************/
+var debug = function debug(object) {
+  console.log(object);
+};
