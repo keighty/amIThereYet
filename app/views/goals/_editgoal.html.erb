@@ -6,9 +6,7 @@
   <%= f.label :motivation, "Motivation" %><br/>
   <%= f.text_area :motivation %>
 
-  <div class="form-actions">
-    <%= f.submit "Change goal", class: "btn btn-large btn-primary" %>
-    <%= link_to 'Cancel', edit_user_path, class: "btn btn-large" %>
-  </div>
+  <%= f.submit "Change goal", class: "btn btn-large btn-primary" %>
+  <%= link_to 'Cancel', edit_user_path, class: "btn btn-large" %>
 
 <% end %>
