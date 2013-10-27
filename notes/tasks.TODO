@@ -8,9 +8,9 @@ Views:
  ☐ settings divs could be shortened up a bit (fields are too big)
 
 Authorization:
-  ☐ admin can delete comments
+  ☐ admin can remove a comment
+  ☐ admin can delete all comments
   ☐ user can edit their own comments
-  ☐ admin can remove a string of comments
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
