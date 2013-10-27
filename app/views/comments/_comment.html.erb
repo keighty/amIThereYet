@@ -1,18 +1,22 @@
 <%= div_for comment do %>
 <% user = User.find(comment.user_id) %>
 
-<div class="row-fluid">
   <div class="well">
-    <strong> Posted <%= time_ago_in_words(comment.created_at) %> ago</strong> by  <%= link_to user.username, user %>
+    <div class="comment_title">
+      <strong> Posted <%= time_ago_in_words(comment.created_at) %> ago</strong> by  <%= link_to user.username, user %>
 
-    <% if user_match?(user) %>
-      <%= link_to (fa_icon "pencil-square"), '#', class: "edit-icon fa-lg"  %>
+      <% if user_match?(user) %>
+        <%= link_to (fa_icon "pencil-square"), '#', class: "edit-icon fa-lg"  %>
+      <% end %>
+      <% if current_user.admin? %>
+        <%= link_to (fa_icon "times-circle") , '#', class: "delete-icon fa-lg"  %>
+      <% end %>
+    </div>
 
-      <%= link_to (fa_icon "times-circle") , '#', class: "delete-icon fa-lg"  %>
-    <% end %>
     <br>
-    <%= comment.body.html_safe %>
+    <div class="comment_body">
+      <%= comment.body.html_safe %>
+    </div>
   </div>
-</div>
 
 <% end %>
