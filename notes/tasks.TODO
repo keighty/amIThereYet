@@ -1,12 +1,10 @@
-Goals:
+Goals View:
  ☐ make all other edit/delete buttons unclickable while editing/adding a goal
  ☐ solution: make flash appear via js (deleting a goal using ajax to prevent page reload, problem: flash message doesnt show until redirect.)
 
 Views:
  ☐ New post view could use a little work
- ☐ What about curating comments? An admin should be allowed to remove offensive comments, or to clear an entire list of comments.
  ☐ settings divs could be shortened up a bit (fields are too big)
- ☐ RSS icon is on the fritz
 
 Authorization:
   ☐ only signed in users can leave a comment
@@ -14,6 +12,16 @@ Authorization:
   ☐ admin can delete all comments
   ☐ user can edit and delete their own comments
 
+Home Page:
+  ☐ change 3 column layout
+  ☐ remove connections until they are needed
+
+Goal Hours:
+  ☐ allow user to add an hour from profile page
+  ☐ allow user to add an hour from home page
+  ☐ add form into sidebar to allow user to select goal (drop down), add a time amount and a description, submit, and view the goal
+
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ RSS icon is on the fritz @done (13-10-27 13:40) @project(Views)
  ✔ edit/delete are icons instead of links or buttons: <i class="fa fa-pencil-square-o"></i> fa-pencil-square-o (color GREEN) and <i class="fa fa-times-circle"></i> fa-times-circle @done (13-10-27 11:20) @project(Authorization)
