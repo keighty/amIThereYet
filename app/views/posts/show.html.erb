@@ -10,7 +10,7 @@
   <div class="span10 well offset1">
     <h2>Comments
 
-      <% if current_user.admin? %>
+      <% if current_user && current_user.admin? %>
         <%= link_to (fa_icon "times-circle") , '#', class: "delete-icon", title: "Delete all comments", rel: 'tooltip', confirm: "Delete all comments?" %>
       <% end %>
     </h2>
