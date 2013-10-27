@@ -6,11 +6,13 @@ Views:
  ☐ New post view could use a little work
  ☐ What about curating comments? An admin should be allowed to remove offensive comments, or to clear an entire list of comments.
  ☐ settings divs could be shortened up a bit (fields are too big)
+ ☐ RSS icon is on the fritz
 
 Authorization:
   ☐ admin can remove a comment
   ☐ admin can delete all comments
   ☐ user can edit their own comments
+  ☐ only signed in users can leave a comment
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
