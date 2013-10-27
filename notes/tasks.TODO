@@ -9,10 +9,10 @@ Views:
  ☐ RSS icon is on the fritz
 
 Authorization:
+  ☐ only signed in users can leave a comment
   ☐ admin can remove a comment
   ☐ admin can delete all comments
-  ☐ user can edit their own comments
-  ☐ only signed in users can leave a comment
+  ☐ user can edit and delete their own comments
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
