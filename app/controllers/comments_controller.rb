@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_user
   before_action :set_post
-  before_action :signed_in_user, only: [:create]
+  # before_action :signed_in_user, only: [:create]
 
   def create
     @comment = @post.comments.new(comment_params)
