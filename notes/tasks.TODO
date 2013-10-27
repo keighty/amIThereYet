@@ -10,5 +10,8 @@ Views:
 Authorization:
   ☐ admin can delete comments
   ☐ user can edit their own comments
-  ☐ edit/delete are icons instead of links or buttons: <i class="fa fa-pencil-square-o"></i> fa-pencil-square-o (color GREEN) and <i class="fa fa-times-circle"></i> fa-times-circle
   ☐ admin can remove a string of comments
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ edit/delete are icons instead of links or buttons: <i class="fa fa-pencil-square-o"></i> fa-pencil-square-o (color GREEN) and <i class="fa fa-times-circle"></i> fa-times-circle @done (13-10-27 11:20) @project(Authorization)
