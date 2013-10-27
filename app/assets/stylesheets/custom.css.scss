@@ -21,6 +21,14 @@ $grayMediumLight: #eaeaea;
   @include box_sizing;
 }
 
+.edit-icon {
+  color: green;
+}
+
+.delete-icon {
+  color: red;
+}
+
 /* footer */
 
 footer {
