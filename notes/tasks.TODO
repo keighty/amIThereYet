@@ -1,8 +1,14 @@
-Am I There Yet?:
-Goals --- ✄ -----------------------
+Goals:
  ☐ make all other edit/delete buttons unclickable while editing/adding a goal
  ☐ solution: make flash appear via js (deleting a goal using ajax to prevent page reload, problem: flash message doesnt show until redirect.)
-Views --- ✄ -----------------------
+
+Views:
  ☐ New post view could use a little work
  ☐ What about curating comments? An admin should be allowed to remove offensive comments, or to clear an entire list of comments.
  ☐ settings divs could be shortened up a bit (fields are too big)
+
+Authorization:
+  ☐ admin can delete comments
+  ☐ user can edit their own comments
+  ☐ edit/delete are icons instead of links or buttons: <i class="fa fa-pencil-square-o"></i> fa-pencil-square-o (color GREEN) and <i class="fa fa-times-circle"></i> fa-times-circle
+  ☐ admin can remove a string of comments
