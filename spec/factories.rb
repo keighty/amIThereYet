@@ -12,11 +12,8 @@ FactoryGirl.define do
   end
 
   factory :post do
-    sequence(:title)  { |n| "Title #{n}" }
-    sequence(:body)   { |n| "body#{n}"}
+    title "Hello Post"
+    body  "Hello Post Body"
   end
 
-  factory :comment do
-    body "comments"
-  end
 end
