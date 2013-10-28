@@ -19,22 +19,20 @@ class CommentsController < ApplicationController
 
   def update
     store_location
-    respond_to do |format|
-      if @comment.update(comment_params)
-        flash[:success] = "Comment Updated"
+    if @comment.update(comment_params)
+      respond_to do |format|
         format.html { redirect_to @post }
         format.js
-      else
-        flash[:error] = "Comment Not Updated"
-        redirect to @post
       end
+    else
+      flash[:error] = "Comment Not Updated"
+      redirect_to @post
     end
   end
 
   # DELETE /post/1/comment/10
   def destroy
     if @comment.destroy
-      flash[:error] = "Goal removed."
       respond_to do |format|
         format.html {redirect_to @user}
         format.js
