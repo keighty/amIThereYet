@@ -1,7 +1,7 @@
 <% provide(:title, "Edit Post") %>
 <h1>Editing post</h1>
 
-<%= render 'form' %>
+<%= render partial: 'form', locals: { button_text: "Edit post"} %>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
