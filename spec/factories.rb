@@ -15,4 +15,8 @@ FactoryGirl.define do
     sequence(:title)  { |n| "Title #{n}" }
     sequence(:body)   { |n| "body#{n}"}
   end
+
+  factory :comment do
+    body "comments"
+  end
 end

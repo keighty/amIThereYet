@@ -23,6 +23,8 @@ describe "Authorization" do
         it { should have_title('Sign in') }
       end
     end
+
+    describe
   end
 
   describe "as wrong user" do
