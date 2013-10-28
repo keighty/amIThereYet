@@ -8,7 +8,6 @@ Views:
  ☐ sign up view form is a little big
 
 Authorization:
-  ☐ admin can remove a comment
   ☐ admin can delete all comments
 
 Home Page:
@@ -22,6 +21,7 @@ Goal Hours:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ admin can remove a comment @done (13-10-28 13:56) @project(Authorization)
  ✔ user can edit and delete their own comments @started(13-10-28 13:07) @done (13-10-28 13:48) @lasted(0:41:00) @project(Authorization)
  ✔ only signed in users can leave a comment @started(13-10-28 08:28) @done (13-10-28 10:54) @lasted(2:26:00) @project(Authorization)
  ✔ RSS icon is on the fritz @done (13-10-27 13:40) @project(Views)
