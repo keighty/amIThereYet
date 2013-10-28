@@ -1,0 +1,2 @@
+$('#new_comment').hide();
+$('<%= "#comment_#{@comment.id}" %>').replaceWith("<%= escape_javascript(render partial: 'editcomment') %>");

@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_user
   before_action :set_post
+  before_action :set_comment, only: [:destroy, :edit, :update]
   before_action :signed_in_user, only: [:create]
 
   def create
@@ -10,8 +11,35 @@ class CommentsController < ApplicationController
     respond_to :js
   end
 
-  def delete
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
 
+  def update
+    store_location
+    respond_to do |format|
+      if @comment.update(comment_params)
+        flash[:success] = "Comment Updated"
+        format.html { redirect_to @post }
+        format.js
+      else
+        flash[:error] = "Comment Not Updated"
+        redirect to @post
+      end
+    end
+  end
+
+  # DELETE /post/1/comment/10
+  def destroy
+    if @comment.destroy
+      flash[:error] = "Goal removed."
+      respond_to do |format|
+        format.html {redirect_to @user}
+        format.js
+      end
+    end
   end
 
   private
@@ -27,11 +55,14 @@ class CommentsController < ApplicationController
       @post = Post.find(params[:post_id])
     end
 
+    def set_comment
+      @comment = @post.comments.find(params[:id])
+    end
+
     def signed_in_user
       unless signed_in?
         session[:return_to] = post_path(@post)
         redirect_to signin_url, notice: "Please sign in."
       end
     end
-
 end

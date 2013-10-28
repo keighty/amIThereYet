@@ -9,8 +9,8 @@
       <strong> Posted <%= time_ago_in_words(comment.created_at) %> ago</strong> by  <%= link_to user.username, user %>
 
       <% if current_user && user_match?(user) %>
-        <%= link_to (fa_icon "pencil-square"), '#', class: "edit-icon fa-lg"  %>
-        <%= link_to (fa_icon "times-circle") , '#', class: "delete-icon fa-lg"  %>
+        <%= link_to (fa_icon "pencil-square"),  edit_post_comment_path(@post, comment), remote: true, class: "edit-icon fa-lg"  %>
+        <%= link_to (fa_icon "times-circle") , [@post, comment], method: :delete, remote: true, class: "delete-icon fa-lg"  %>
       <% end %>
     </div>
 
