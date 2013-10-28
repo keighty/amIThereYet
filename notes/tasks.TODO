@@ -7,10 +7,10 @@ Views:
  ☐ settings divs could be shortened up a bit (fields are too big)
 
 Authorization:
-  ☐ only signed in users can leave a comment
+  ☐ only signed in users can leave a comment @started(13-10-28 08:28)
+  ☐ user can edit and delete their own comments
   ☐ admin can remove a comment
   ☐ admin can delete all comments
-  ☐ user can edit and delete their own comments
 
 Home Page:
   ☐ change 3 column layout
