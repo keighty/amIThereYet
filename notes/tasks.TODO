@@ -7,7 +7,6 @@ Views:
  ☐ settings divs could be shortened up a bit (fields are too big)
 
 Authorization:
-  ☐ only signed in users can leave a comment @started(13-10-28 08:28)
   ☐ user can edit and delete their own comments
   ☐ admin can remove a comment
   ☐ admin can delete all comments
@@ -23,5 +22,6 @@ Goal Hours:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ only signed in users can leave a comment @started(13-10-28 08:28) @done (13-10-28 10:54) @lasted(2:26:00) @project(Authorization)
  ✔ RSS icon is on the fritz @done (13-10-27 13:40) @project(Views)
  ✔ edit/delete are icons instead of links or buttons: <i class="fa fa-pencil-square-o"></i> fa-pencil-square-o (color GREEN) and <i class="fa fa-times-circle"></i> fa-times-circle @done (13-10-27 11:20) @project(Authorization)
