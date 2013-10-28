@@ -33,15 +33,15 @@ class GoalsController < ApplicationController
 
   def update
     store_location
-    respond_to do |format|
-      if @goal.update(goal_params)
+    if @goal.update(goal_params)
+      respond_to do |format|
         flash[:success] = "Goal Updated"
         format.html { redirect_to edit_user_path(@user) }
         format.js
-      else
-        flash[:error] = "Goal Not Updated"
-        redirect to edit_user_path(@user)
       end
+    else
+      flash[:error] = "Goal Not Updated"
+      redirect_to edit_user_path(@user)
     end
   end
 
