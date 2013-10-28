@@ -14,15 +14,17 @@
         <%= link_to (fa_icon "times-circle") , '#', class: "delete-icon", title: "Delete all comments", rel: 'tooltip', confirm: "Delete all comments?" %>
       <% end %>
     </h2>
+
     <div id="comments">
       <%= render :partial => @post.comments %>
     </div>
+
     <%= form_for [@post, Comment.new], remote: signed_in? do |f| %>
-    <p>
-      <%= f.label :body, "New comment" %><br/>
-      <%= f.text_area :body %>
-    </p>
-    <p><%= f.submit "Add comment" %></p>
+      <% if signed_in? %>
+        <%= f.label :body, "New comment" %><br/>
+        <%= f.text_area :body %>
+      <% end %>
+      <%= f.submit (signed_in? ? "Add comment" : "Sign in to add comment") %>
     <% end %>
   </div>
 </div>
