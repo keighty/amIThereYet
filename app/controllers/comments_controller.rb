@@ -1,16 +1,13 @@
 class CommentsController < ApplicationController
   before_action :set_user
   before_action :set_post
-  # before_action :signed_in_user, only: [:create]
+  before_action :signed_in_user, only: [:create]
 
   def create
     @comment = @post.comments.new(comment_params)
     @comment.user_id = current_user.id
     @comment.save
-
-    respond_to do |format|
-      format.js
-    end
+    respond_to :js
   end
 
   def delete
@@ -33,6 +30,7 @@ class CommentsController < ApplicationController
     def signed_in_user
       unless signed_in?
         store_location
+        p store_location
         redirect_to signin_url, notice: "Please sign in."
       end
     end
