@@ -5,7 +5,7 @@
     <div class="comment_title">
 
       <% if current_user.admin? %>
-        <%= link_to (fa_icon "times-circle") , '#', class: "fa-2x"  %>
+        <%= link_to (fa_icon "times-circle") , [@post, comment], method: :delete, remote: true, class: "fa-2x"  %>
       <% end %>
 
       <strong> Posted <%= time_ago_in_words(comment.created_at) %> ago</strong> by  <%= link_to user.username, user %>
