@@ -23,8 +23,6 @@ describe "Authorization" do
         it { should have_title('Sign in') }
       end
     end
-
-    describe
   end
 
   describe "as wrong user" do
@@ -59,6 +57,32 @@ describe "Authorization" do
           expect(page).to have_content('Change')
         end
       end
+    end
+
+    describe "when attempting to comment on a blog post" do
+      let(:post) { FactoryGirl.create(:post) }
+
+      before do
+        visit post_path(post)
+        click_button "Sign in to add comment"
+      end
+
+      it "should show sign in page" do
+        expect(page).to have_content("Sign in")
+      end
+
+      describe "after signing in" do
+        before do
+          fill_in "Email",    with: user.email
+          fill_in "Password", with: user.password
+          click_button "Sign in"
+        end
+
+        it "should render the post" do
+          expect(page).to have_content(post.title)
+        end
+      end
+
     end
   end
 end
