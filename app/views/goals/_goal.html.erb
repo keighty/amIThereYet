@@ -1,8 +1,8 @@
-<%= div_for goal, class: "well span9" do %>
   <h3><%= goal.description %></h3>
   <p>
     <%= goal.motivation %>
   </p>
+
   <% if make_edits  %>
     <div class="pull-right">
      <%= link_to "Edit", edit_user_goal_path(@user, goal), remote: true, class: 'btn btn-mini' %>
@@ -10,4 +10,15 @@
     </div>
   <% end %>
   <hr>
-<% end %>
+
+  <table>
+    <caption>Total Hours </caption>
+    <tr>
+      <th>Duration</th>
+      <th>Category</th>
+      <th>Description</th>
+    </tr>
+
+    <%= render goal.hours %>
+
+  </table>
