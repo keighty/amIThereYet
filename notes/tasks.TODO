@@ -3,7 +3,9 @@ Goals View:
  ☐ solution: make flash appear via js (deleting a goal using ajax to prevent page reload, problem: flash message doesnt show until redirect.)
 
 Views:
- ☐ sign up view form is a little big
+
+Navigation:
+☐ user should get some instruction on first sign up
 
 Authorization:
  ☐ rethink the side navigation bar appearing only on signin
@@ -19,6 +21,7 @@ Goal Hours:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ sign up view form is a little big @started(13-10-29 09:59) @done (13-10-29 10:04) @lasted(0:05:00) @project(Views)
  ✔ settings divs could be shortened up a bit (fields are too big) @started(13-10-29 09:42) @done (13-10-29 09:57) @lasted(0:15:00) @project(Views)
  ✔ New post view could use a little work @started(13-10-29 09:21) @done (13-10-29 09:41) @lasted(0:20:00) @project(Views)
  ✘ admin can delete all comments @cancelled (13-10-28 14:04) @project(Authorization)
