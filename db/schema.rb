@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029195618) do
+ActiveRecord::Schema.define(version: 20131029221758) do
 
   create_table "comments", force: true do |t|
     t.integer  "post_id"
@@ -29,13 +29,14 @@ ActiveRecord::Schema.define(version: 20131029195618) do
     t.text     "motivation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "total_hours"
   end
 
   add_index "goals", ["user_id"], name: "index_goals_on_user_id"
 
   create_table "hours", force: true do |t|
     t.integer  "goal_id"
-    t.decimal  "duration"
+    t.float    "duration"
     t.string   "category"
     t.string   "description"
     t.datetime "created_at"
