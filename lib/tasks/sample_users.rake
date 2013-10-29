@@ -8,9 +8,12 @@ namespace :db do
                  username: "myrene",
                  admin: true)
 
-    goal = {  description: "Primary goal",
-              motivation: "Because I'm worth it." }
-    user.goals.create!(goal)
+    goal = user.goals.create!(description: "Primary goal",
+                motivation: "Because I'm worth it." )
+
+    5.times do |n|
+      goal.hours.create!(duration: 100*(n+1), category: "class", description: "#{n} lecture")
+    end
 
     10.times do |n|
       name  = Faker::Name.name
