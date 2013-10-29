@@ -4,5 +4,6 @@
   <%= render 'posts/sides/index_sidebar' %>
 <% end %>
 
-<%= render partial: 'post_index' %>
+<%= render @posts %>
+
 <%= will_paginate @posts, class: "pages pagination" %>

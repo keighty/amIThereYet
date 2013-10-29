@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   # GET /posts.atom
   def index
+    @is_index = true
     @posts = Post.paginate(page: params[:page], limit: 5).order('created_at DESC')
 
     respond_to do |format|
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @is_index = false
   end
 
   # GET /posts/new

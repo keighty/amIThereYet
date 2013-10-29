@@ -140,7 +140,10 @@ input {
 
 /* Post snippet */
 .no-overflow {
+  display: block;
   overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 
 .lines-1{height: 1em}

@@ -1,5 +1,17 @@
 <h3><%= link_to_unless_current post.title, post %></h3>
+
 <small>Posted: <%= post.created_at.strftime("%d-%b-%Y") %></small>
-<div class="well post_content">
-  <%= post.content.html_safe %>
-</div>
+
+<% if @is_index %>
+  <div class="well no-overflow lines-1">
+    <%= post.content.html_safe %>
+  </div>
+  <%= link_to 'read more', post, class: "pull-right" %>
+<% else %>
+  <div class="well">
+    <%= post.content.html_safe %>
+  </div>
+<% end %>
+
+
+
