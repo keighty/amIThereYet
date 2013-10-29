@@ -12,7 +12,7 @@ namespace :db do
                 motivation: "Because I'm worth it." )
 
     5.times do |n|
-      goal.hours.create!(duration: 100*(n+1), category: "class", description: "#{n} lecture")
+      goal.hours.create!(duration: 100*(n+1), category: "class #{n+1}", description: "lecture about #{n+1} things")
     end
 
     10.times do |n|
