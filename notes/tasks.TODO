@@ -3,11 +3,11 @@ Goals View:
  ☐ solution: make flash appear via js (deleting a goal using ajax to prevent page reload, problem: flash message doesnt show until redirect.)
 
 Views:
- ☐ New post view could use a little work
  ☐ settings divs could be shortened up a bit (fields are too big)
  ☐ sign up view form is a little big
 
 Authorization:
+ ☐ rethink the side navigation bar appearing only on signin
 
 Home Page:
   ☐ change 3 column layout
@@ -20,6 +20,7 @@ Goal Hours:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ New post view could use a little work @started(13-10-29 09:21) @done (13-10-29 09:41) @lasted(0:20:00) @project(Views)
  ✘ admin can delete all comments @cancelled (13-10-28 14:04) @project(Authorization)
  ✔ admin can remove a comment @done (13-10-28 13:56) @project(Authorization)
  ✔ user can edit and delete their own comments @started(13-10-28 13:07) @done (13-10-28 13:48) @lasted(0:41:00) @project(Authorization)
