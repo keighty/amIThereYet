@@ -6,7 +6,7 @@
   <% if make_edits  %>
     <div class="pull-right">
      <%= link_to "Edit", edit_user_goal_path(@user, goal), remote: true, class: 'btn btn-mini' %>
-    <%= link_to "Delete", [@user, goal], method: :delete, confirm: "Are you sure you want to remove this goal?", remote: true, class: "btn btn-mini btn-danger" %>
+    <%= link_to "Delete", [@user, goal], method: :delete, data: { confirm: "Are you sure you want to remove this goal?" }, remote: true, class: "btn btn-mini btn-danger" %>
     </div>
   <% end %>
   <hr>

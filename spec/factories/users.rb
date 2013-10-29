@@ -9,6 +9,8 @@ FactoryGirl.define do
     factory :admin do
       admin true
     end
+
+    goals { Array.new(1) { FactoryGirl.build(:goal) } }
   end
 
   factory :post do
