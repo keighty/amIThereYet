@@ -9,7 +9,7 @@ namespace :db do
                  admin: true)
 
     goal = user.goals.create!(description: "Primary goal",
-                motivation: "Because I'm worth it." )
+                motivation: "Because I'm worth it.", total_hours: 550 )
 
     5.times do |n|
       goal.hours.create!(duration: 100*(n+1), category: "class #{n+1}", description: "lecture about #{n+1} things")
