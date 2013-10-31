@@ -3,6 +3,8 @@
     <%= goal.motivation %>
   </p>
 
+  <%= render partial: 'hours/totals', locals: {goal: goal}  %>
+
   <% if make_edits  %>
     <div class="pull-right">
      <%= link_to "Edit", edit_user_goal_path(@user, goal), remote: true, class: 'btn btn-mini' %>
@@ -11,14 +13,4 @@
   <% end %>
   <hr>
 
-  <table class="table table-bordered table-condensed table-striped">
-    <caption>Total Hours </caption>
-    <tr>
-      <th>Duration</th>
-      <th>Category</th>
-      <th>Description</th>
-    </tr>
-
-    <%= render goal.hours %>
-
-  </table>
+  <%= render partial: 'hours/history', locals: {goal: goal}  %>

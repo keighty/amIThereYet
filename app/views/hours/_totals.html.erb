@@ -1,0 +1,14 @@
+<table class="table table-bordered table-condensed table-striped">
+  <tr>
+    <th>Total Hours</th>
+    <th>Hours Remaining</th>
+    <th>Velocity (hours/day)</th>
+  </tr>
+
+  <tr>
+    <td><%= goal.total_hours  %></td>
+    <td><%= 10000 - goal.total_hours  %></td>
+    <td><%= goal.total_hours/((Time.now - goal.created_at)/ 1.day).round%></td>
+  </tr>
+
+</table>
