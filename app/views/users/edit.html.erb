@@ -13,8 +13,9 @@
 
 <div class="edit_content hideme" id="goal_content">
   <h3>Goals</h3>
-  <div id="goals"></div>
-  <%= link_to "Add Goal", [@user, Goal.new] , :remote => true, class: "btn", id: "add_goal_button" %>
+  <div class="row" id="goals">
+    <%= link_to "Add Goal", [@user, Goal.new] , :remote => true, class: "btn", id: "add_goal_button" %>
+  </div>
   <hr>
   <%= render partial: @user.goals, locals:{ make_edits: true } %>
 </div>

@@ -4,11 +4,9 @@
   <%= render 'users/sides/show_sidebar' %>
 <% end %>
 
-<div class="span10">
+<div class="span6">
   <h2>Goals</h2>
 
-  <div id="goals">
     <%= render :partial => @user.goals, locals: { make_edits: false } %>
-  </div>
   <hr>
 </div>

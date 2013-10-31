@@ -1,3 +1,4 @@
+<%= div_for goal do %>
   <h3><%= goal.description %></h3>
   <p>
     <%= goal.motivation %>
@@ -14,4 +15,5 @@
     <%= render partial: 'hours/history', locals: {goal: goal}  %>
   <% end %>
   <hr>
+<% end %>
 

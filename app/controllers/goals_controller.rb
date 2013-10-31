@@ -23,7 +23,9 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = @user.goals.create!(goal_params)
+    @goal = @user.goals.new(goal_params)
+    @goal.total_hours = 0
+    @goal.save!
 
     respond_to do |format|
       format.html { redirect_to @user, notice: 'New goal created' }

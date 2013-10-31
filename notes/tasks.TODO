@@ -20,6 +20,10 @@ Goal Hours:
   ☐ allow user to add an hour from home page
   ☐ add form into sidebar to allow user to select goal (drop down), add a time amount and a description, submit, and view the goal
 
+Categories:
+  ☐ provide default categories, but allow users to manage categories
+  ☐ give user summary by category
+
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ show user hours on profile page @done (13-10-31 09:04) @project(Goal Hours)
