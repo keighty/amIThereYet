@@ -10,7 +10,8 @@
      <%= link_to "Edit", edit_user_goal_path(@user, goal), remote: true, class: 'btn btn-mini' %>
     <%= link_to "Delete", [@user, goal], method: :delete, data: { confirm: "Are you sure you want to remove this goal?" }, remote: true, class: "btn btn-mini btn-danger" %>
     </div>
+  <% else %>
+    <%= render partial: 'hours/history', locals: {goal: goal}  %>
   <% end %>
   <hr>
 
-  <%= render partial: 'hours/history', locals: {goal: goal}  %>
