@@ -1,19 +1,23 @@
-<%= div_for goal do %>
-  <h3><%= goal.description %></h3>
-  <p>
+<%= div_for goal, class: 'row' do %>
+<div class="span5">
+  <h3><%= goal.description %>
+    <% if make_edits  %>
+      <%= link_to "Edit", edit_user_goal_path(@user, goal), remote: true, class: 'btn btn-mini' %>
+      <%= link_to "Delete", [@user, goal], method: :delete, data: { confirm: "Are you sure you want to remove this goal?" }, remote: true, class: "btn btn-mini btn-danger" %>
+    <% end %>
+  </h3>
     <%= goal.motivation %>
-  </p>
+</div>
 
+<div class="span5">
   <%= render partial: 'hours/totals', locals: {goal: goal}  %>
+</div>
 
-  <% if make_edits  %>
-    <div class="pull-right">
-     <%= link_to "Edit", edit_user_goal_path(@user, goal), remote: true, class: 'btn btn-mini' %>
-    <%= link_to "Delete", [@user, goal], method: :delete, data: { confirm: "Are you sure you want to remove this goal?" }, remote: true, class: "btn btn-mini btn-danger" %>
-    </div>
-  <% else %>
+<% if !make_edits  %>
+  <div class= "row">
     <%= render partial: 'hours/history', locals: {goal: goal}  %>
-  <% end %>
-  <hr>
+  </div>
+<% end %>
+<hr>
 <% end %>
 
